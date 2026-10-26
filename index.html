@@ -1,23 +1,292 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wonderlands</title><link rel="stylesheet" href="style.css"></head>
-<body>
-<div class="cloud cloud-a"></div><div class="cloud cloud-b"></div><div class="cloud cloud-c"></div>
-<header><a class="wordmark" href="./"><span class="planet">◒</span> WONDERLANDS<span class="edition">ART-DIRECTION PROOF · A</span></a><nav aria-label="World navigation"><button id="journal" title="Discovery journal"><span>▤</span><b>Discoveries</b></button><button id="celebrate" title="Replay discovery moment"><span>✧</span><b>Discovery moment</b></button><button id="language" aria-label="Change language">EN / 繁</button></nav></header>
-<main>
-<section class="world-heading"><div><p class="eyebrow" data-zh="第一區域 · 海洋星球">REGION 01 · OCEAN PLANET</p><h1 data-zh="一片海，無限可能。">A little world of possibility.</h1></div><div class="region"><span class="live-dot"></span><span data-zh="翠綠海岸">The Verdant Coast</span><small>16 × 16</small></div></section>
-<div class="workspace">
-<aside class="companion">
-<div class="beep-figure"><svg viewBox="0 0 180 190" role="img" aria-label="BEEP, a small floating ivory robot with warm brass trim and curious cyan eyes"><defs><linearGradient id="shell" x2=".8" y2="1"><stop stop-color="#fffbed"/><stop offset=".5" stop-color="#d9e9e6"/><stop offset="1" stop-color="#719da3"/></linearGradient><linearGradient id="gold"><stop stop-color="#f7d58d"/><stop offset="1" stop-color="#ad7232"/></linearGradient><radialGradient id="face"><stop stop-color="#174756"/><stop offset="1" stop-color="#031c29"/></radialGradient><filter id="glow"><feGaussianBlur stdDeviation="2"/></filter></defs><ellipse cx="92" cy="177" rx="33" ry="5" fill="#032d38" opacity=".2"/><path d="M82 135 Q90 165 100 135" fill="#76ebed" opacity=".5"/><path d="M58 111 Q42 126 39 142 L52 148 72 124M119 112 Q137 121 142 137 L130 143 111 124" fill="url(#shell)" stroke="#416775" stroke-width="2"/><ellipse cx="89" cy="122" rx="30" ry="29" fill="url(#shell)" stroke="#547c83" stroke-width="2"/><path d="M76 145 L103 145 97 156 81 156" fill="url(#gold)"/><circle cx="89" cy="125" r="9" fill="url(#gold)"/><circle cx="89" cy="125" r="5" fill="#80f6eb"/><path d="M57 45 L47 16 Q48 10 53 16 L70 40M117 41 L126 16 Q131 10 131 19 L130 52" fill="url(#gold)" stroke="#32566a" stroke-width="2"/><ellipse cx="90" cy="75" rx="62" ry="49" fill="url(#shell)" stroke="#365e6a" stroke-width="2"/><ellipse cx="32" cy="80" rx="12" ry="20" fill="url(#gold)" stroke="#486b73" stroke-width="2"/><ellipse cx="32" cy="80" rx="5" ry="13" fill="#36cbd5"/><ellipse cx="147" cy="75" rx="9" ry="17" fill="url(#gold)" stroke="#486b73" stroke-width="2"/><rect x="46" y="44" width="88" height="62" rx="30" fill="url(#face)" stroke="#819b9c" stroke-width="3"/><ellipse cx="69" cy="74" rx="7" ry="12" fill="#6ceef0"/><ellipse cx="110" cy="70" rx="7" ry="12" fill="#6ceef0"/><path d="M84 90 Q93 96 101 88" fill="none" stroke="#64e5e4" stroke-width="3" stroke-linecap="round"/><ellipse cx="91" cy="33" rx="12" ry="3" fill="url(#gold)"/><ellipse cx="109" cy="52" rx="8" ry="3" fill="white" opacity=".5"/></svg></div>
-<div class="beep-copy"><p class="eyebrow">BEEP <span data-zh="在想……">IS WONDERING…</span></p><p class="beep-line" data-zh="河流找到大海了！不知道這片海岸還藏著什麼驚喜……">The river found the sea! I wonder what else this coast has in store…</p><button id="ideas" class="text-button" data-zh="BEEP 的靈感 ↗">BEEP’s ideas ↗</button></div>
-</aside>
-<section class="canvas-section" aria-label="Illustrated world preview">
-<div class="board-rim"><div id="board" tabindex="0" role="img" aria-label="16 by 16 art proof: lush irregular island with continuous coastline, winding river, northern mountain ridge and southeast port village"><img class="terrain" src="art/island.png" alt="Illustrated relief map of the Verdant Coast"><div class="grid"></div><div id="cursor"></div><div class="board-caption"><span>✧</span> <span data-zh="隨心創造，讓世界帶來驚喜。">Make a little room for wonder.</span></div></div><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span></div>
-<div class="palette" role="toolbar" aria-label="Terrain palette">
-<button data-tool="Land" class="selected" aria-pressed="true"><span class="tile land"><i></i></span><b data-zh="平原">Land</b></button><button data-tool="Hill" aria-pressed="false"><span class="tile hill"><i></i></span><b data-zh="丘陵">Hill</b></button><button data-tool="Mountain" aria-pressed="false"><span class="tile mountain"><i></i></span><b data-zh="山脈">Mountain</b></button><button data-tool="River" aria-pressed="false"><span class="tile river"><i></i></span><b data-zh="河流">River</b></button><button data-tool="Village" aria-pressed="false"><span class="tile village"><i></i></span><b data-zh="村落">Village</b></button><button data-tool="Ocean" aria-pressed="false"><span class="tile ocean"><i></i></span><b data-zh="海洋">Ocean</b></button>
-</div><div class="under-palette"><span id="status" data-zh="選擇工具，預覽你的下一個靈感。">Choose a tool. Imagine what comes next.</span><span>STAGE A · VISUAL STUDY</span></div>
-</section>
-<aside class="world-notes"><div class="compass" aria-hidden="true"><span>N</span><svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="28" fill="none" stroke="currentColor" opacity=".5"/><path d="M40 6 L46 35 40 40 34 35Z M74 40 L45 46 40 40 45 34Z" fill="#efd7a2"/><path d="M40 74 L34 45 40 40 46 45Z M6 40 L35 34 40 40 35 46Z" fill="#6cb6bb"/></svg></div><div id="discovery" class="discovery"><div class="discovery-symbol">✧</div><p class="eyebrow" data-zh="發現新驚喜">A NEW DISCOVERY</p><h2 data-zh="港灣初現">A Port of Call</h2><p data-zh="海與陸地相遇的地方，新的故事展開了。">Where land meets sea,<br>a new story takes shape.</p><span class="discovery-rule"></span><small data-zh="已記錄於探索日誌">Added to your discovery journal</small></div><div class="map-note"><span>01</span><p data-zh="不必趕路，這個世界屬於你。">No hurry.<br>This world is yours.</p></div></aside>
-</div>
-<footer><span data-zh="BEEP 好奇，你來創造，世界讓你們一起驚喜。">BEEP wonders. You create. The world surprises you both.</span><a href="proof/comparison.html" data-zh="美術方向與參考比較 ↗">Art direction & reference ↗</a></footer>
-</main><dialog id="journal-dialog"><button class="close" aria-label="Close journal">×</button><p class="eyebrow">DISCOVERY JOURNAL · VISUAL SAMPLE</p><h2>A Port of Call</h2><p>A settlement beside the ocean becomes a place to greet the horizon.</p><p class="journal-beep">BEEP: “A whole sea of possibilities. And now, somewhere to wave from!”</p><small>Stage A demonstrates one discovery presentation. Gameplay and persistent unlocks follow art approval.</small></dialog>
-<script src="proof.js"></script></body></html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Wonderlands</title>
+    <link rel="icon" href="art/icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="cloud cloud-a"></div>
+    <div class="cloud cloud-b"></div>
+    <div class="cloud cloud-c"></div>
+    <header>
+      <a class="wordmark" href="./"
+        ><span class="planet">◒</span> WONDERLANDS<span class="edition"
+          >BEEP WONDERS. YOU CREATE.</span
+        ></a
+      >
+      <nav aria-label="World navigation">
+        <button id="journal" aria-label="Discovery journal">
+          <span>▤</span><b data-zh="探索日誌">Discoveries</b></button
+        ><button id="settings" aria-label="Settings">
+          <span>⚙</span><b data-zh="設定">Settings</b></button
+        ><button id="language" aria-label="Change language">EN / 繁</button>
+      </nav>
+    </header>
+    <main>
+      <section class="world-heading">
+        <div>
+          <p class="eyebrow" data-zh="第一區域 · 海洋星球">
+            REGION 01 · OCEAN PLANET
+          </p>
+          <h1 data-zh="一片海，無限可能。">A little world of possibility.</h1>
+        </div>
+        <div class="region">
+          <span class="live-dot"></span
+          ><select id="regions" aria-label="Region"></select
+          ><small>16 × 16</small>
+        </div>
+      </section>
+      <div class="workspace">
+        <aside class="companion">
+          <div class="beep-figure">
+            <svg
+              viewBox="0 0 180 190"
+              role="img"
+              aria-label="BEEP, a small floating ivory robot with warm brass trim and curious cyan eyes"
+            >
+              <defs>
+                <linearGradient id="shell" x2=".8" y2="1">
+                  <stop stop-color="#fffbed" />
+                  <stop offset=".5" stop-color="#d9e9e6" />
+                  <stop offset="1" stop-color="#719da3" />
+                </linearGradient>
+                <linearGradient id="gold">
+                  <stop stop-color="#f7d58d" />
+                  <stop offset="1" stop-color="#ad7232" />
+                </linearGradient>
+                <radialGradient id="face">
+                  <stop stop-color="#174756" />
+                  <stop offset="1" stop-color="#031c29" />
+                </radialGradient>
+                <filter id="glow"><feGaussianBlur stdDeviation="2" /></filter>
+              </defs>
+              <ellipse
+                cx="92"
+                cy="177"
+                rx="33"
+                ry="5"
+                fill="#032d38"
+                opacity=".2"
+              />
+              <path d="M82 135 Q90 165 100 135" fill="#76ebed" opacity=".5" />
+              <path
+                d="M58 111 Q42 126 39 142 L52 148 72 124M119 112 Q137 121 142 137 L130 143 111 124"
+                fill="url(#shell)"
+                stroke="#416775"
+                stroke-width="2"
+              />
+              <ellipse
+                cx="89"
+                cy="122"
+                rx="30"
+                ry="29"
+                fill="url(#shell)"
+                stroke="#547c83"
+                stroke-width="2"
+              />
+              <path d="M76 145 L103 145 97 156 81 156" fill="url(#gold)" />
+              <circle cx="89" cy="125" r="9" fill="url(#gold)" />
+              <circle cx="89" cy="125" r="5" fill="#80f6eb" />
+              <path
+                d="M57 45 L47 16 Q48 10 53 16 L70 40M117 41 L126 16 Q131 10 131 19 L130 52"
+                fill="url(#gold)"
+                stroke="#32566a"
+                stroke-width="2"
+              />
+              <ellipse
+                cx="90"
+                cy="75"
+                rx="62"
+                ry="49"
+                fill="url(#shell)"
+                stroke="#365e6a"
+                stroke-width="2"
+              />
+              <ellipse
+                cx="32"
+                cy="80"
+                rx="12"
+                ry="20"
+                fill="url(#gold)"
+                stroke="#486b73"
+                stroke-width="2"
+              />
+              <ellipse cx="32" cy="80" rx="5" ry="13" fill="#36cbd5" />
+              <ellipse
+                cx="147"
+                cy="75"
+                rx="9"
+                ry="17"
+                fill="url(#gold)"
+                stroke="#486b73"
+                stroke-width="2"
+              />
+              <rect
+                x="46"
+                y="44"
+                width="88"
+                height="62"
+                rx="30"
+                fill="url(#face)"
+                stroke="#819b9c"
+                stroke-width="3"
+              />
+              <ellipse cx="69" cy="74" rx="7" ry="12" fill="#6ceef0" />
+              <ellipse cx="110" cy="70" rx="7" ry="12" fill="#6ceef0" />
+              <path
+                d="M84 90 Q93 96 101 88"
+                fill="none"
+                stroke="#64e5e4"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+              <ellipse cx="91" cy="33" rx="12" ry="3" fill="url(#gold)" />
+              <ellipse
+                cx="109"
+                cy="52"
+                rx="8"
+                ry="3"
+                fill="white"
+                opacity=".5"
+              />
+            </svg>
+          </div>
+          <div class="beep-copy">
+            <p class="eyebrow">
+              BEEP <span data-zh="在想……">IS WONDERING…</span>
+            </p>
+            <p
+              class="beep-line"
+              data-zh="指揮官，一整顆海洋星球！不知道我們能創造什麼……"
+            >
+              Commander, an entire ocean planet! I wonder what we could make of
+              it…
+            </p>
+            <button id="ideas" class="text-button" data-zh="BEEP 的靈感 ↗">
+              BEEP’s ideas ↗
+            </button>
+          </div>
+        </aside>
+        <section class="canvas-section" aria-label="Illustrated world preview">
+          <div class="board-controls">
+            <button id="zoom-out" aria-label="Zoom out">−</button
+            ><output id="zoom-label">100%</output
+            ><button id="zoom-in" aria-label="Zoom in">＋</button
+            ><span data-zh="縮放後可用捲動條平移"
+              >Scroll to pan when zoomed</span
+            ><button id="inspect" aria-pressed="false" data-zh="檢視地形">
+              Inspect
+            </button>
+          </div>
+          <div class="board-rim">
+            <div id="viewport">
+              <div id="board">
+                <canvas
+                  id="world"
+                  tabindex="0"
+                  role="application"
+                  aria-describedby="keyboard-help"
+                ></canvas>
+                <div id="cursor"></div>
+                <div id="sparkles" aria-hidden="true">✦ ✧ ✦</div>
+              </div>
+            </div>
+            <span class="corner tl"></span><span class="corner tr"></span
+            ><span class="corner bl"></span><span class="corner br"></span>
+          </div>
+          <p id="keyboard-help" class="sr-only">
+            Arrow keys select a cell. Space or Enter places the selected
+            terrain. Number keys 1 to 6 choose tools. I toggles inspect. Undo
+            with Control Z, redo with Control Shift Z.
+          </p>
+          <div class="palette" role="toolbar" aria-label="Terrain palette">
+            <button data-tool="land" class="selected" aria-pressed="true">
+              <span class="tile land"><i></i></span
+              ><b data-zh="平原">Land</b></button
+            ><button data-tool="hill" aria-pressed="false">
+              <span class="tile hill"><i></i></span
+              ><b data-zh="丘陵">Hill</b></button
+            ><button data-tool="mountain" aria-pressed="false">
+              <span class="tile mountain"><i></i></span
+              ><b data-zh="山脈">Mountain</b></button
+            ><button data-tool="river" aria-pressed="false">
+              <span class="tile river"><i></i></span
+              ><b data-zh="河流">River</b></button
+            ><button data-tool="village" aria-pressed="false">
+              <span class="tile village"><i></i></span
+              ><b data-zh="村落">Village</b></button
+            ><button data-tool="ocean" aria-pressed="false">
+              <span class="tile ocean"><i></i></span><b data-zh="海洋">Ocean</b>
+            </button>
+          </div>
+          <div class="under-palette">
+            <span id="status" role="status"></span><span id="count"></span>
+          </div>
+          <div class="edit-controls">
+            <button id="undo" data-zh="復原">↶ Undo</button
+            ><button id="redo" data-zh="重做">↷ Redo</button
+            ><button id="save" data-zh="儲存">Save</button
+            ><button id="clear" data-zh="清空區域">Clear region</button>
+          </div>
+          <div id="detail" hidden>
+            <label for="variant" data-zh="外觀">Appearance</label
+            ><select id="variant"></select
+            ><span id="cell-info"></span>
+          </div>
+        </section>
+        <aside class="world-notes">
+          <div class="compass" aria-hidden="true">
+            <span>N</span
+            ><svg viewBox="0 0 80 80">
+              <circle
+                cx="40"
+                cy="40"
+                r="28"
+                fill="none"
+                stroke="currentColor"
+                opacity=".5"
+              />
+              <path
+                d="M40 6 L46 35 40 40 34 35Z M74 40 L45 46 40 40 45 34Z"
+                fill="#efd7a2"
+              />
+              <path
+                d="M40 74 L34 45 40 40 46 45Z M6 40 L35 34 40 40 35 46Z"
+                fill="#6cb6bb"
+              />
+            </svg>
+          </div>
+          <div id="discovery" class="discovery">
+            <div class="discovery-symbol">✧</div>
+            <p class="eyebrow" data-zh="發現新驚喜">A NEW DISCOVERY</p>
+            <h2 id="discovery-title"></h2>
+            <p id="discovery-description"></p>
+            <span class="discovery-rule"></span
+            ><small id="discovery-count"></small>
+          </div>
+          <div class="map-note">
+            <span>01</span>
+            <p data-zh="不必趕路，這個世界屬於你。">
+              No hurry.<br />This world is yours.
+            </p>
+          </div>
+        </aside>
+      </div>
+      <footer>
+        <span data-zh="BEEP 好奇，你來創造，世界讓你們一起驚喜。"
+          >BEEP wonders. You create. The world surprises you both.</span
+        ><button id="help" class="text-button" data-zh="操作說明 ↗">
+          How to play ↗
+        </button>
+      </footer>
+    </main>
+    <dialog id="modal">
+      <button class="close" aria-label="Close">×</button>
+      <div id="modal-content"></div>
+    </dialog>
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>

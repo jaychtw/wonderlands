@@ -2,38 +2,58 @@
 
 **BEEP wonders. You create. The world surprises you both.**
 
-Stage A: one art-direction proof, awaiting the owner's visual approval. This is a responsive presentation prototype, not the implemented game. No Stage B or C work has begun.
+A peaceful, playable 16 × 16 ocean-planet terraforming sandbox for desktop and mobile browsers. Paint anywhere, reshape coastlines, connect rivers and mountain ranges, and let BEEP share your discoveries. No costs, timers, or forced goals. English and Traditional Chinese are included.
 
-## Review on GitHub
+The Stage A direction was approved with the requirement that the final world be genuinely editable. The game now uses generated cell geometry, independent illustrated sprites, and masked ground materials. It starts with a blank ocean. **The Stage A island illustration and supplied concept are never loaded by the game and are excluded from the release.**
 
-![Wonderlands desktop art-direction proof](proof/desktop.png)
+![Actual playable game, painted by automated pointer interactions](evidence/desktop-after.png)
 
-[Mobile proof](proof/mobile.png) · [Reference comparison](proof/art-direction-review.png)
+## Play
 
-The comparison shows the supplied concept, desktop proof, mobile proof, and intentional visual deviations together. These images can be reviewed directly on GitHub without access to the cloud workspace.
-
-## View the proof
-
-From `/workspace/wonderlands`:
+[Download Wonderlands v1.0.0](release/Wonderlands-v1.0.0.zip), extract it, and serve the extracted `Wonderlands` folder with Python 3:
 
 ```sh
-python -m http.server 4173 --bind 0.0.0.0
+python -m http.server 4173
 ```
 
-Open through your development environment's supported web viewing route. No package installation or build is required. `index.html` contains the complete screen; `proof/comparison.html` presents the supplied concept next to this proof and its mobile layout. Screenshots are included in `proof/desktop.png` and `proof/mobile.png`.
+Then open the local server's address in your browser. Serve over HTTP; opening `index.html` directly from the filesystem does not support JavaScript modules reliably. No npm install, build, account, or external service is needed to play. From a source checkout, `npm start` runs the same server.
 
-The six palette selections, desktop cell hover, discovery animation replay, journal dialog, and EN/繁 presentation switch are interactive. Terrain is a fixed illustrated study with a 16 × 16 grid overlay. It does not paint, save, evaluate recipes, or transform settlements. Mobile shows the same scene and tools, with BEEP and the discovery card below the canvas. This intentionally avoids implying implemented mechanics before art approval.
+[Play guide / 操作說明](docs/PLAY.md) · [Deployment instructions](docs/DEPLOYMENT.md)
 
-## Art direction
+## See the dynamic evidence on GitHub
 
-Rich gouache relief terrain, teal ocean and jade landscape, warm ivory and brass accents, regional settlement detail, a continuously winding river, coherent mountain ridge, and irregular foaming coastline. BEEP is an original vector character with a cyan expressive face. The palette sits immediately below the board; the environment continues around the interface.
+[Before: blank ocean](evidence/desktop-before.png) · [After: painted world](evidence/desktop-after.png) · [Coastline cut](evidence/desktop-river-cut.png) · [City reverted](evidence/city-reverted.png) · [Mobile gameplay](evidence/mobile-gameplay.png) · [Traditional Chinese touch session](evidence/mobile-zh-TW.png)
 
-Intentional differences from the supplied concept: more top-down terrain, quieter grid, restrained ornament, no locked-tool spoilers, and responsive stacked mobile layout. The illustrative regional detail is the visual target; individual buildings and boats are decorative, with no physical simulation planned.
+[Heart-shaped layout](evidence/arbitrary-heart.png) · [Separate islands](evidence/arbitrary-archipelago.png) · [Second region](evidence/region-two.png)
 
-The generated island is a **visual target only**, not a proposed full-map backdrop for the final editable game. After approval, use composable terrain/shore masks, connected river paths, coherent relief assets, and contextual settlement art to preserve this language during edits. Seed decorative variation. Removing terrain must reverse derived appearance. Full arbitrary-map visual fidelity remains an implementation and QA requirement, not something this static proof establishes.
+[Dynamic evidence and test report](docs/VERIFICATION.md) · [Visual compromises against Stage A](docs/VISUAL-COMPROMISES.md)
 
-## Validation
+## Included
 
-`proof/validation.json` records Stage A browser checks only. Capture with `node proof/capture.cjs` when Playwright and Chromium are available in the environment; the app itself has no Node dependencies. The capture script requires a running proof server at port 4173. No gameplay, persistence, performance, or complete localization acceptance is claimed at Stage A.
+- All 256 cells editable, mouse/touch drag painting with connected diagonal strokes, keyboard editing, zoom and scroll-to-pan.
+- Coastline union geometry, continuous river paths and mouths, relief chains, contextual port / riverside / fortress / city appearances, compatible manual overrides and Auto.
+- 20 permanent discoveries, optional recipe-based BEEP ideas, retroactive transformations, and a second savanna region after any ten distinct discoveries. The unlock condition is hidden in the game until earned.
+- Independent region maps, bounded undo/redo per session, confirmed clear, versioned browser-local autosaves, validated import/export, settings and EN/zh-TW UI.
+- Reduced motion, mute, cell guides, semantic controls, and keyboard board input.
 
-The unchanged supplied handoff is preserved in `docs/handoff/`. Its GDD governs the bounded v1 scope. After the owner's art approval, implement and test Stages B and C autonomously, without additional scheduled human verification gates. No public deployment is authorized by this proof.
+## Verify and package
+
+Node 20+ runs the dependency-free rule tests:
+
+```sh
+npm test
+```
+
+Browser tests require Playwright 1.62.1 and Chromium. In the prepared cloud environment both are installed. Elsewhere:
+
+```sh
+npm install --no-save --package-lock=false playwright@1.62.1
+npx playwright install chromium
+npm run test:browser
+```
+
+The suite starts and stops its own local test server. It uses `/usr/bin/chromium` when available, otherwise Playwright's bundled browser. `CHROMIUM_PATH` overrides the executable. In restricted cloud sandboxes, browser execution may require the platform's normal elevated execution route. Run `python scripts/package.py` to reproduce the static release archive. CI runs logic checks, browser checks, and packaging; this handoff does not claim that a remote CI run has completed.
+
+Production code is in `src/`, the sole achievement recipe registry is `src/core.js`, and unchanged source handoff documents are in `docs/handoff/`. `proof/` preserves the historical Stage A references and captures; they are not gameplay evidence. The app has no runtime network dependency beyond loading its own files.
+
+The runnable build and GitHub delivery complete the bounded personal/experimental release. No public website deployment has been performed. Physical-device testing, Safari/Firefox coverage, and commercial-release certification are not claimed.

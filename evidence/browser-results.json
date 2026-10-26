@@ -1,0 +1,62 @@
+{
+  "runAt": "2026-10-26T09:53:11.477Z",
+  "runner": "Chromium via Playwright; desktop and emulated mobile touch",
+  "results": [
+    {
+      "name": "All 256 cells, boundary hits, grouped undo/redo and confirmed reset",
+      "status": "passed",
+      "milliseconds": 7770
+    },
+    {
+      "name": "Dynamic illustrated world: blank → painted → river cut → reverse edit → reload",
+      "status": "passed",
+      "milliseconds": 21710
+    },
+    {
+      "name": "Arbitrary heart layout and isolated archipelago use the same editable renderer",
+      "status": "passed",
+      "milliseconds": 9467
+    },
+    {
+      "name": "Fortress, port, compatible appearance override and reverse mountain edits",
+      "status": "passed",
+      "milliseconds": 4223
+    },
+    {
+      "name": "Keyboard editing, settings, bilingual journal and save persistence",
+      "status": "passed",
+      "milliseconds": 4150
+    },
+    {
+      "name": "Mobile touch painting, scroll prevention, zoomed/panned hit testing and reload",
+      "status": "passed",
+      "milliseconds": 2614
+    },
+    {
+      "name": "Corrupt saves preserve recovery copy; storage failure stays playable and warns",
+      "status": "passed",
+      "milliseconds": 1753
+    },
+    {
+      "name": "Deterministic rendering, full-board performance and basic accessible controls",
+      "status": "passed",
+      "milliseconds": 1862
+    },
+    {
+      "name": "Export and validated import restore worlds; malformed and cancelled imports preserve current state",
+      "status": "passed",
+      "milliseconds": 2763
+    },
+    {
+      "name": "Diagonal river strokes remain one orthogonally connected network",
+      "status": "passed",
+      "milliseconds": 1097
+    },
+    {
+      "name": "No browser script errors or failed asset requests",
+      "status": "passed",
+      "milliseconds": 0
+    }
+  ],
+  "pageErrors": []
+}

@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "checks": [
+    "ZIP integrity",
+    "Subpath hosting",
+    "Runtime assets loaded",
+    "Touch editing",
+    "Saved state after reload"
+  ],
+  "scriptErrors": []
+}

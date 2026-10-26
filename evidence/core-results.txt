@@ -1,0 +1,29 @@
+
+> wonderlands@1.0.0 test
+> node tests/core.test.js
+
+✔ all 256 cells edit and erase, invalid edits are rejected (2.996039ms)
+✔ orthogonal adjacency has correct corners, edges and no row wrapping (2.228077ms)
+✔ rivers and villages do not count as solid land for island achievement (0.848219ms)
+✔ river networks connect bends and junctions then split on reverse edits (0.710624ms)
+✔ settlement contexts reverse after mountain and ocean changes (0.635265ms)
+✔ compatible overrides win and invalid overrides fall back to Auto semantics (0.458376ms)
+✔ city capability unlocks retroactively and reverse edits dismantle the derived city (1.62923ms)
+✔ all 20 recipes are reachable; registry IDs and translations are complete (0.648421ms)
+✔ discoveries are first-time only and stay after dismantling (1.671919ms)
+✔ any ten distinct valid discoveries unlock second region (0.924974ms)
+✔ save round trip preserves both regions, settings, overrides, permanent rewards (1.292527ms)
+✔ corrupt, unsupported and partial saves reject safely; old schema migrates (0.649606ms)
+✔ save-load re-evaluates existing arrangements for retroactive rewards (0.669598ms)
+✔ near-miss hints stop after discovery and never refer to unimplemented recipes (0.436068ms)
+✔ coast contours cover isolated, diagonal, solid and holed layouts deterministically (1.858211ms)
+✔ seeded arbitrary layouts retain complete connectivity coverage and reversible contours (29.733584ms)
+✔ diagonal paint drags create connected cardinal paths in every direction (0.690184ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 61.227986
