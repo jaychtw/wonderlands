@@ -1,5 +1,7 @@
 # Wonderlands — dynamic verification and bounded release
 
+**Subsequent delivery:** the owner’s playtest passed and v1.0.0 is now deployed and verified on [GitHub Pages](PAGES-RELEASE.md). The build-verification record below predates public deployment.
+
 Stage A was approved with a dynamic-game condition. The implementation now uses editable cell state and a composable Canvas2D renderer. There is no runtime fixed-map image, concept screenshot, remote art request, or precomposed level. New saves start with 256 ocean cells.
 
 ## Reproduction

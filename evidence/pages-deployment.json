@@ -1,0 +1,66 @@
+{
+  "public_url": "https://jaychtw.github.io/wonderlands/",
+  "deployment_status": "success",
+  "https_enforced": true,
+  "deployment_commit": "367a1e43db32c6657986b694836aee38efea8804",
+  "workflow_url": "https://github.com/jaychtw/wonderlands/actions/runs/40311862602",
+  "workflow_conclusion": "success",
+  "public_browser_smoke": "passed in GitHub Actions: desktop and mobile, edit, save/reload, bilingual switch, layout, runtime integrity",
+  "runtime_file_checks": [
+    {
+      "path": "index.html",
+      "http_status": 200,
+      "sha256": "a109e6826a8bae6799d1edee37b619fdb97c2f5dc8fa7d70cd48d97aac9cf780",
+      "matches_v1_0_0_release": true
+    },
+    {
+      "path": "style.css",
+      "http_status": 200,
+      "sha256": "775825fe4c44a689f019f03f699ff54c23698d634c8a0b4dc26afee419010591",
+      "matches_v1_0_0_release": true
+    },
+    {
+      "path": "src/app.js",
+      "http_status": 200,
+      "sha256": "558e9ee7d1666e095cf721c2fabd0fe1ba48f6d8d70cd5c4c5ab3690a7369709",
+      "matches_v1_0_0_release": true
+    },
+    {
+      "path": "src/core.js",
+      "http_status": 200,
+      "sha256": "08f724e3d6a8a9d1614089f884bb439306d8384d1a977c6480a7cc3cd466daf0",
+      "matches_v1_0_0_release": true
+    },
+    {
+      "path": "src/renderer.js",
+      "http_status": 200,
+      "sha256": "673b9962af90591f709970249cefb8b94dd6bba256b8af06e2a91403d5aa8617",
+      "matches_v1_0_0_release": true
+    },
+    {
+      "path": "art/icon.svg",
+      "http_status": 200,
+      "sha256": "c6386147da2e336239e9581ce781ab4e62ae9d1c8daf588173802d2cf453f45c",
+      "matches_v1_0_0_release": true
+    },
+    {
+      "path": "art/ocean.png",
+      "http_status": 200,
+      "sha256": "73dcd220983c9371943814be8c73a38c8672095d2cd0dab092416bbb627599f4",
+      "matches_v1_0_0_release": true
+    },
+    {
+      "path": "art/terrain-atlas.png",
+      "http_status": 200,
+      "sha256": "51facbe9b4aeef9b21ebc69c3e3a5544e577bddb145a62f99533cb16ae8a8e9a",
+      "matches_v1_0_0_release": true
+    },
+    {
+      "path": "art/ground-textures.png",
+      "http_status": 200,
+      "sha256": "e06bea2af55ba8fede0e712b25ef1062f1666de0c1f1286586992fbf354b2721",
+      "matches_v1_0_0_release": true
+    }
+  ],
+  "release_zip_sha256": "0cc8d0db1ae0eb263c1c3f004421e15302406ed34dc5d3b5f3cda51e033b8660"
+}

@@ -10,6 +10,8 @@ The Stage A direction was approved with the requirement that the final world be 
 
 ## Play
 
+**[Play Wonderlands online](https://jaychtw.github.io/wonderlands/)** — GitHub Pages, using the unchanged v1.0.0 release.
+
 [Download Wonderlands v1.0.0](release/Wonderlands-v1.0.0.zip), extract it, and serve the extracted `Wonderlands` folder with Python 3:
 
 ```sh
@@ -56,4 +58,4 @@ The suite starts and stops its own local test server. It uses `/usr/bin/chromium
 
 Production code is in `src/`, the sole achievement recipe registry is `src/core.js`, and unchanged source handoff documents are in `docs/handoff/`. `proof/` preserves the historical Stage A references and captures; they are not gameplay evidence. The app has no runtime network dependency beyond loading its own files.
 
-The runnable build and GitHub delivery complete the bounded personal/experimental release. No public website deployment has been performed. Physical-device testing, Safari/Firefox coverage, and commercial-release certification are not claimed.
+The owner’s local human playtest passed. GitHub Pages deployment completes the bounded personal/experimental v1.0.0 release; no gameplay fixes or new human QA cycle were requested. See the [deployment report](docs/PAGES-RELEASE.md) for the hosted smoke result. Physical-device testing, Safari/Firefox coverage, and commercial-release certification are not claimed.
