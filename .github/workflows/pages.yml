@@ -1,0 +1,61 @@
+name: Deploy Wonderlands to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'release/Wonderlands-v1.0.0.zip'
+      - '.github/workflows/pages.yml'
+      - 'tests/deployment-smoke.cjs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract the unchanged v1.0.0 release
+        run: |
+          python - <<'PY'
+          import pathlib, zipfile
+          with zipfile.ZipFile('release/Wonderlands-v1.0.0.zip') as archive:
+              assert archive.testzip() is None
+              archive.extractall('_pages')
+          pathlib.Path('_pages/Wonderlands').rename('_site')
+          pathlib.Path('_site/.nojekyll').touch()
+          PY
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install deployment-smoke tools
+        run: |
+          npm install --no-save --package-lock=false playwright@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Smoke test the public site
+        run: node tests/deployment-smoke.cjs '${{ steps.deployment.outputs.page_url }}'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pages-deployment-smoke
+          path: evidence/deployment-smoke*
+          if-no-files-found: ignore
