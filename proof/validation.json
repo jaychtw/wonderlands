@@ -1,0 +1,25 @@
+{
+  "stage": "A: presentation-only prototype",
+  "desktopBoard": {
+    "x": 388,
+    "y": 224,
+    "width": 664,
+    "height": 664
+  },
+  "mobileBoard": {
+    "x": 19,
+    "y": 198,
+    "width": 352,
+    "height": 352
+  },
+  "checks": [
+    "Desktop and mobile screenshots",
+    "Palette selection",
+    "Journal dialog open/close",
+    "Language preview toggle",
+    "Discovery animation trigger",
+    "Mobile touch selection",
+    "No horizontal overflow on mobile"
+  ],
+  "pageErrors": []
+}
